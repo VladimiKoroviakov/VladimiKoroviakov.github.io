@@ -1817,4 +1817,7 @@ textarea:focus {
     -webkit-animation: none !important;
     animation: none !important;
   }
+  .map {
+    width: 250px;
+    height: 400px;
 }
