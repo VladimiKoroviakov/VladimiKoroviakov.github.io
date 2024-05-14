@@ -61,7 +61,7 @@ const handleScroll = () => {
                     clearInterval(interval); // Stop the interval
                     item.dataset.animated = true; // Mark the item as animated
                 }
-            }, 1); // Adjust the interval time for smoother animation
+            }, 10); // Adjust the interval time for smoother animation
         }
     });
 };
