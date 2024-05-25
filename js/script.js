@@ -1,5 +1,5 @@
 const hamburger = document.querySelector('.hamburger'),
-    space =document.querySelector('.menu__overlay'),
+    space = document.querySelector('.menu__overlay'),
     menu = document.querySelector('.menu'),
     closeElem = document.querySelector('.menu__close'),
     menuItem = document.querySelectorAll('.menu__link');
@@ -16,7 +16,7 @@ space.addEventListener('click', () => {
     menu.classList.remove('active');
 });
 
- menuItem.forEach((item, i) => {
+menuItem.forEach((item, i) => {
     item.addEventListener('click', () => {
         menu.classList.remove('active');
     });
@@ -43,7 +43,7 @@ const handleScroll = () => {
             const targetLine = item.querySelector('.skills__ratings-line span');
 
             // Get the target width from the counter value
-            const targetWidth = parseFloat(targetCounter.textContent); 
+            const targetWidth = parseFloat(targetCounter.dataset.percent); 
             let currentWidth = 0;
             let currentValue = 0;
 
@@ -55,13 +55,13 @@ const handleScroll = () => {
                 // Update the progress bar width and counter value
                 targetLine.style.width = currentWidth + '%';
                 targetCounter.textContent = currentValue + '%';
+                item.dataset.animated = true; // Mark the item as animated
 
                 // Check if reached the target width
                 if (currentWidth >= targetWidth) {
                     clearInterval(interval); // Stop the interval
-                    item.dataset.animated = true; // Mark the item as animated
                 }
-            }, 10); // Adjust the interval time for smoother animation
+            }, 1); // Adjust the interval time for smoother animation
         }
     });
 };
@@ -69,8 +69,9 @@ const handleScroll = () => {
 // Attach scroll event listener
 window.addEventListener('scroll', handleScroll);
 
-const icon = document.getElementById('icon');
 
+//
+const icon = document.getElementById('icon');
 icon.onclick = function() {
     document.body.classList.toggle('dark-theme');
     if(document.body.classList.contains('dark-theme')) {
@@ -82,10 +83,10 @@ icon.onclick = function() {
 
 $('.contacts__form').validate();
 
-$('from').submit(function(e) {
+$('form').submit(function(e) {
     e.preventDefault();
 
-    if(!$(this).validate()) {
+    if(!$(this).valid()) {
         return;
     }
 
