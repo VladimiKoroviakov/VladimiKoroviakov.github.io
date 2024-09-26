@@ -98,21 +98,60 @@ icon.onclick = function() {
 
 $('.contacts__form').validate();
 
-$('form').submit(function(e) {
-    e.preventDefault();
+// $('form').submit(function(e) {
+//     e.preventDefault();
 
-    if(!$(this).valid()) {
-        return;
-    }
+//     if(!$(this).valid()) {
+//         return;
+//     }
 
-    $.ajax({
-        type:'POST',
-        url: 'mailer/smart.php',
-        data: $(this).serialize()
-    }).done(function() {
-        $(this).find('input').val('');
+//     $.ajax({
+//         type:'POST',
+//         url: 'mailer/smart.php',
+//         data: $(this).serialize()
+//     }).done(function() {
+//         $(this).find('input').val('');
 
-        $('form').trigger('reset');
-    });
-    return false;
+//         $('form').trigger('reset');
+//     });
+//     return false;
+// });
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();  // Prevent the default form submission
+
+  // Get the form data
+  const email = document.getElementById('email').value;
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+
+  // Check if all fields are filled
+  if (!email || !name || !message) {
+    document.getElementById('status').innerText = "Please fill in all fields.";
+    return;
+  }
+
+  // Clear previous status message
+  document.getElementById('status').innerText = "";
+
+  // Send the data using the Fetch API
+  fetch('https://script.google.com/macros/s/AKfycbyxLO8-XP2U6du_3V3wy3qmCGkzCEGMPT5nRulPkUum4uwmq5-ejcg_mRgIQAos9Que/exec', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}`
+  })
+  .then(response => response.text())
+  .then(result => {
+    // Show success message
+    document.getElementById('status').innerText = "Message sent successfully!";
+    // Optionally clear the form
+    document.getElementById('contactForm').reset();
+  })
+  .catch(error => {
+    // Show error message
+    document.getElementById('status').innerText = "Error sending message. Please try again.";
+    console.warn("Error sending message:", error);
+  });
 });
