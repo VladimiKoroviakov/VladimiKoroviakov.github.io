@@ -98,24 +98,6 @@ icon.onclick = function() {
 
 $('.contacts__form').validate();
 
-// $('form').submit(function(e) {
-//     e.preventDefault();
-
-//     if(!$(this).valid()) {
-//         return;
-//     }
-
-//     $.ajax({
-//         type:'POST',
-//         url: 'mailer/smart.php',
-//         data: $(this).serialize()
-//     }).done(function() {
-//         $(this).find('input').val('');
-
-//         $('form').trigger('reset');
-//     });
-//     return false;
-// });
 document.getElementById('contactForm').addEventListener('submit', function(event) {
   event.preventDefault();  // Prevent the default form submission
 
@@ -126,7 +108,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
   // Check if all fields are filled
   if (!email || !name || !message) {
-    document.getElementById('status').innerText = "Please fill in all fields.";
+    document.getElementById('status').innerText = "Please fill in all fields and accept the terms and conditions.";
     return;
   }
 
