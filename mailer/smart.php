@@ -5,6 +5,9 @@ $email = $_POST['email'];
 $text = $_POST['text'];
 
 require_once('phpmailer/PHPMailerAutoload.php');
+//require_once('src/PHPMailer.php');
+//require 'src/SMTP.php';
+//require 'src/Exception.php';
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
@@ -13,12 +16,12 @@ $mail->CharSet = 'utf-8';
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'vladimirblack659@gmail.com';                 // Наш логин
-$mail->Password = 'fmweyanbdchefcdj';                           // Наш пароль от ящика
+$mail->Username = 'mr.vladimir.vl8@gmail.com';                 // Наш логин
+$mail->Password = 'uwip zdty kuyp pkad';                           // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  
-$mail->setFrom('vladimirblack659@gmail.com', 'Portfolio');   // От кого письмо 
+$mail->setFrom('example@gmail.com', 'Portfolio');   // От кого письмо 
 $mail->addAddress('mr.vladimir.vl8@gmail.com');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
@@ -28,12 +31,13 @@ $mail->addAddress('mr.vladimir.vl8@gmail.com');     // Add a recipient
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Дані';
+$mail->Subject = 'Portfolio website form submitted';
 $mail->Body    = '
-		Користувач залшив такі дані <br> 
-	Імʼя: ' . $name . ' <br>
+	Notification from Portfolio Website!<br><br>
+	The user left this data:<br>
+	Name: ' . $name . ' <br>
 	E-mail: ' . $email . '<br>
-	Повідомлення: ' . $text . '';
+	Message: ' . $text . '';
 
 if(!$mail->send()) {
     return false;
