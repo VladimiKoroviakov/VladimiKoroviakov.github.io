@@ -69,21 +69,16 @@ const handleScroll = () => {
 // Attach scroll event listener
 window.addEventListener('scroll', handleScroll);
 
-// Scrolling Observer
-const observer = new IntersectionObserver((entries) => {
+// Scrolling Animation 
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
-        //console.log(entry);
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
+            observer.unobserve(entry.target);
         }
     });
-
 });
-    
-const hiddenElements = document.querySelectorAll('.hidden-element');
-hiddenElements.forEach((el) => observer.observe(el));
+document.querySelectorAll('.hidden-element').forEach((el) => observer.observe(el));
 
 //
 const icon = document.getElementById('icon');
