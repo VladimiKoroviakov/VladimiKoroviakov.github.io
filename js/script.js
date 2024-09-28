@@ -84,9 +84,9 @@ document.querySelectorAll('.hidden-element').forEach((el) => observer.observe(el
 document.querySelector('#icon').onclick = () => {
     document.body.classList.toggle('dark-theme');
     if(document.body.classList.contains('dark-theme')) {
-      document.querySelector('.dark_mode-icon').src = "img/modes/primary.svg";
+      document.querySelector('.dark_mode-icon').src = "img/Modes/primary.svg";
     } else {
-      document.querySelector('.dark_mode-icon').src = "img/modes/Moon.svg";
+      document.querySelector('.dark_mode-icon').src = "img/Modes/Moon.svg";
     }
 };
 
