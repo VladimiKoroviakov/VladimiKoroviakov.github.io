@@ -80,14 +80,13 @@ const observer = new IntersectionObserver((entries, observer) => {
 });
 document.querySelectorAll('.hidden-element').forEach((el) => observer.observe(el));
 
-//
-const icon = document.getElementById('icon');
-icon.onclick = function() {
+// Dark theme mode
+document.querySelector('#icon').onclick = () => {
     document.body.classList.toggle('dark-theme');
     if(document.body.classList.contains('dark-theme')) {
-        icon.src = "img/modes/primary.svg";
-    }else {
-        icon.src = "img/modes/Moon.svg";
+      document.querySelector('.dark_mode-icon').src = "img/modes/primary.svg";
+    } else {
+      document.querySelector('.dark_mode-icon').src = "img/modes/Moon.svg";
     }
 };
 
