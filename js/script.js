@@ -1,73 +1,23 @@
+// Hamburder menu
 const hamburger = document.querySelector('.hamburger'),
-    space = document.querySelector('.menu__overlay'),
-    menu = document.querySelector('.menu'),
-    closeElem = document.querySelector('.menu__close'),
-    menuItem = document.querySelectorAll('.menu__link');
+      space = document.querySelector('.menu__overlay'),
+      menu = document.querySelector('.menu'),
+      closeElem = document.querySelector('.menu__close'),
+      menuItem = document.querySelectorAll('.menu__link');
 
-hamburger.addEventListener('click', () => {
-    menu.classList.add('active');
-});
-
-closeElem.addEventListener('click', () => {
-    menu.classList.remove('active');
-});
-
-space.addEventListener('click', () => {
-    menu.classList.remove('active');
-});
-
-menuItem.forEach((item, i) => {
-    item.addEventListener('click', () => {
-        menu.classList.remove('active');
+const HamFunc = (elem, addRem = true) => {
+    elem.addEventListener('click', () => {
+        if (addRem) menu.classList.add('active');
+        else menu.classList.remove('active');
     });
-});
+}
 
-// Procent Counter ont the skills section
-// Function to check if an element is in the viewport
-const isInViewport = (element) => {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-};
+HamFunc(hamburger);
+HamFunc(closeElem, false);
+HamFunc(space, false);
+menuItem.forEach(item => { HamFunc(item, false)});
 
-// Function to handle the scroll event
-const handleScroll = () => {
-    document.querySelectorAll('.skills__ratings-item').forEach((item, i) => {
-        // Check if the item is in the viewport and not yet animated
-        if (isInViewport(item) && !item.dataset.animated) {
-            const targetCounter = item.querySelector('.skills__ratings-counter');
-            const targetLine = item.querySelector('.skills__ratings-line span');
 
-            // Get the target width from the counter value
-            const targetWidth = parseFloat(targetCounter.dataset.percent); 
-            let currentWidth = 0;
-            let currentValue = 0;
-
-            const interval = setInterval(() => {
-                // Increment the width and value gradually
-                currentWidth += 1;
-                currentValue += 1;
-
-                // Update the progress bar width and counter value
-                targetLine.style.width = currentWidth + '%';
-                targetCounter.textContent = currentValue + '%';
-                item.dataset.animated = true; // Mark the item as animated
-
-                // Check if reached the target width
-                if (currentWidth >= targetWidth) {
-                    clearInterval(interval); // Stop the interval
-                }
-            }, 1); // Adjust the interval time for smoother animation
-        }
-    });
-};
-
-// Attach scroll event listener
-window.addEventListener('scroll', handleScroll);
 
 // Scrolling Animation 
 const observer = new IntersectionObserver((entries, observer) => {
@@ -80,18 +30,43 @@ const observer = new IntersectionObserver((entries, observer) => {
 });
 document.querySelectorAll('.hidden-element').forEach((el) => observer.observe(el));
 
+
+
 // Dark theme mode
-document.querySelector('#icon').onclick = () => {
+document.querySelector('#icon').onclick = function() {
     document.body.classList.toggle('dark-theme');
+    const icon = document.querySelector('.dark_mode-icon');
     if(document.body.classList.contains('dark-theme')) {
-      document.querySelector('.dark_mode-icon').src = "img/Modes/primary.svg";
+      icon.src = "img/modes/primary.svg";
     } else {
-      document.querySelector('.dark_mode-icon').src = "img/Modes/Moon.svg";
+      icon.src = "img/modes/Moon.svg";
     }
 };
 
+
+// Page up & smooth scrolling
+window.addEventListener('scroll', function() {
+  const pageBtn = document.querySelector('.pageup');
+  if (window.scrollY > 1500 && pageBtn) {
+    pageBtn.style.display = 'block';
+  } else {
+    pageBtn.style.display = 'none';
+  }
+});
+
+document.querySelector('a[href="#up"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  const target = document.querySelector(this.getAttribute('href'));
+  window.scrollTo({
+    top: target.offsetTop,
+    behavior: 'smooth'
+  });
+});
+
+
+// Contact form
 document.querySelector('#contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent the default form submission
+    event.preventDefault();
   
     // Get the form data
     const email = document.getElementById('email').value;
