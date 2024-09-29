@@ -37,9 +37,9 @@ document.querySelector('#icon').onclick = function() {
     document.body.classList.toggle('dark-theme');
     const icon = document.querySelector('.dark_mode-icon');
     if(document.body.classList.contains('dark-theme')) {
-      icon.src = "img/modes/primary.svg";
+      icon.src = "img/Modes/primary.svg";
     } else {
-      icon.src = "img/modes/Moon.svg";
+      icon.src = "img/Modes/Moon.svg";
     }
 };
 
