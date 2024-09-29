@@ -44,6 +44,48 @@ document.querySelector('#icon').onclick = function() {
 };
 
 
+// Numbers animation 
+document.addEventListener('DOMContentLoaded', function () {
+  // Select all the rating items
+  const ratingItems = document.querySelectorAll('.skills__ratings-item');
+
+  // Function to start the counter and animation
+  function startRatingAnimation(item) {
+      const counter = item.querySelector('.skills__ratings-counter');
+      const bar = item.querySelector('.skills__ratings-line span');
+      const percent = parseInt(counter.getAttribute('data-percent'));
+
+      let count = 0;
+      const interval = setInterval(() => {
+          if (count <= percent) {
+              counter.textContent = `${count}%`;
+              bar.style.width = `${count}%`;
+              count++;
+          } else {
+              clearInterval(interval);
+          }
+      }, 20); 
+  }
+
+  // Setup IntersectionObserver
+  const observerOptions = { threshold: 0.4 };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              startRatingAnimation(entry.target);
+              observer.unobserve(entry.target); // Stop observing once animation starts
+          }
+      });
+  }, observerOptions);
+
+  // Observe each rating item
+  ratingItems.forEach(item => {
+      observer.observe(item);
+  });
+});
+
+
 // Page up & smooth scrolling
 window.addEventListener('scroll', function() {
   const pageBtn = document.querySelector('.pageup');
