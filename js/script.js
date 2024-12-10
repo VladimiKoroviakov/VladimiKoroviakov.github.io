@@ -98,7 +98,7 @@ const translations = {
         samplesOfWork: "Samples of my work",
         priceList: "Price List",
         landingPage: "Landing-page",
-        landingPagePrice: "starting at $200",
+        landingPagePrice: "starting at $300",
         landingPageDescr: "Fully responsive landing page with engaging animations, customizable contact form and a popup.",
         webDesign: "UI/UX Design",
         designPrice: "Individually",
@@ -179,7 +179,7 @@ const translations = {
         priceList: "Cennik",
         
         landingPage: "Strona docelowa (Landing)",
-        landingPagePrice: "od $200",
+        landingPagePrice: "od $300",
         landingPageDescr: "W pełni responsywna strona docelowa z atrakcyjnymi animacjami, konfigurowalnym formularzem kontaktowym i okienkiem popup.",
         webDesign: "Projektowanie UI/UX",
         designPrice: "Indywidualnie",
@@ -255,7 +255,7 @@ const translations = {
         priceList: "Прайс-лист",
         
         landingPage: "Односторінковий сайт",
-        landingPagePrice: "Від $200",
+        landingPagePrice: "Від $300",
         landingPageDescr: "Повністю адаптивна лендинг-сторінка з привабливими анімаціями, налаштованою формою зворотного зв’язку та спливаючим вікном.",
         webDesign: "UI/UX Дизайн",
         designPrice: "Індивідуально",
