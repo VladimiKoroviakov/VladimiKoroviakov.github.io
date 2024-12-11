@@ -68,13 +68,13 @@ $(document).ready(function(){
         },
         messages: {
           name: {
-            required: "Пожалуйста, введите свое имя",
-            minlength: jQuery.validator.format("Введите минимум {0} символа")
+            required: "Please, enter your name",
+            minlength: jQuery.validator.format("Minimum length is {0} symbols")
           },
-          phone: "Пожалуйста, введите свой номер телефона",
+          phone: "Please, enter your valid phone number",
           email: {
-            required: "Пожалуйста, введите свой email",
-            email: "Следуйте примеру name@gmail.com"
+            required: "Please, enter your valid email",
+            email: "Follow the example of name@gmail.com"
           }
         }
       });
