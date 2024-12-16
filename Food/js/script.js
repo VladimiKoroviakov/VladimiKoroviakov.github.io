@@ -678,7 +678,7 @@ function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass
         });
 	}
 
-	function showTabContent(i = 0) {
+	function showTabContent(i = 1) {
         tabsContent[i].classList.add('show', 'fade');
         tabsContent[i].classList.remove('hide');
         tabs[i].classList.add(activeClass);
