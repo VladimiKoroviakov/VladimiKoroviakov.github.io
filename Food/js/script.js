@@ -800,7 +800,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
     Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])('[data-modal]', '.modal', modalTimerId);
-    Object(_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2025-03-20');
+    Object(_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2024-12-25');
     Object(_modules_cards__WEBPACK_IMPORTED_MODULE_3__["default"])();
     Object(_modules_calc__WEBPACK_IMPORTED_MODULE_4__["default"])();
     Object(_modules_forms__WEBPACK_IMPORTED_MODULE_5__["default"])('form', modalTimerId);
@@ -817,4 +817,44 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 /***/ }),
+
+/***/ "./js/services/services.js":
+/*!*********************************!*\
+  !*** ./js/services/services.js ***!
+  \*********************************/
+/*! exports provided: postData, getResource */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postData", function() { return postData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getResource", function() { return getResource; });
+const postData = async (url, data) => {
+    let res = await fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data
+    });
+
+    return await res.json();
+};
+
+async function getResource(url) {
+    let res = await fetch(url);
+
+    if (!res.ok) {
+        throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+    }
+
+    return await res.json();
+}
+
+
+
+
+/***/ })
+
+/******/ });
 //# sourceMappingURL=bundle.js.map
