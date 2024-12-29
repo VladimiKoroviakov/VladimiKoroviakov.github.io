@@ -733,7 +733,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
     Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])('[data-modal]', '.modal', modalTimerId);
-    Object(_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2024-12-25');
+    Object(_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2025-03-20');
     Object(_modules_calc__WEBPACK_IMPORTED_MODULE_3__["default"])();
     Object(_modules_forms__WEBPACK_IMPORTED_MODULE_4__["default"])('form', modalTimerId);
     Object(_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])({
