@@ -196,6 +196,8 @@ textarea:focus {
 }
 
 .header .logo_img img {
+  width: 230px;
+  height: 40px;
   margin-right: 2rem;
 }
 
@@ -204,7 +206,7 @@ textarea:focus {
   vertical-align: middle;
   line-height: 1.2;
   font-size: 1.4rem;
-  color: #0089cd;
+  color: #0074d9;
 }
 
 .header_btn {
@@ -308,7 +310,7 @@ textarea:focus {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #0089cd;
+  color: #0074d9;
   text-decoration: underline;
 }
 
@@ -396,7 +398,7 @@ textarea:focus {
   text-align: center;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
-  border-top: 0.5rem solid #0089cd;
+  border-top: 0.5rem solid #0074d9;
   background: -webkit-gradient(linear, left top, left bottom, from(#c7dce9), color-stop(0%, #c7dce9), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(180deg, #c7dce9 0%, #c7dce9 0%, rgba(255, 255, 255, 0) 100%);
 }
@@ -408,7 +410,7 @@ textarea:focus {
   font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
-  color: #0089cd;
+  color: #0074d9;
 }
 
 .glazing_warm {
@@ -516,7 +518,7 @@ textarea:focus {
 .decoration_item a:focus {
   border: none;
   text-decoration: none;
-  color: #0089cd;
+  color: #0074d9;
   /*border-top: 1rem solid @blue;
 				height: 8rem;
 				padding: 2rem 1rem;
@@ -535,7 +537,7 @@ textarea:focus {
 }
 
 .decoration_item .after_click {
-  border-top: 1rem solid #0089cd;
+  border-top: 1rem solid #0074d9;
   height: 8rem;
   padding: 2rem 0;
   background: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), color-stop(0%, #ebebeb), to(rgba(255, 255, 255, 0)));
@@ -562,7 +564,7 @@ textarea:focus {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #0089cd;
+  color: #0074d9;
 }
 
 .decoration_content_material p span {
@@ -609,7 +611,11 @@ textarea:focus {
 /*Guarantees*/
 .guarantees {
   padding: 6rem 0 1rem;
-  background-color: #0089cd;
+  background-color: #0074d9;
+}
+
+.guarantees .row {
+  margin-bottom: 40px;
 }
 
 .guarantees_header h2 {
@@ -622,7 +628,7 @@ textarea:focus {
 
 .guarantees h3 {
   margin-top: 3rem;
-  margin-bottom: 8rem;
+  min-height: 50px;
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.4;
@@ -631,6 +637,10 @@ textarea:focus {
 
 .guarantees img {
   min-height: 7rem;
+}
+.guarantees_block {
+  padding: 30px 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .guarantees_block:hover {
@@ -673,7 +683,7 @@ textarea:focus {
   font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
-  color: #0089cd;
+  color: #0074d9;
 }
 
 .sale_subtitle {
@@ -739,7 +749,7 @@ textarea:focus {
   margin-bottom: 1.8rem;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #0089cd;
+  color: #0074d9;
 }
 
 .contacts_info p {
@@ -770,7 +780,7 @@ textarea:focus {
 /*Feedback*/
 .feedback {
   padding: 6rem 0;
-  background-color: #0089cd;
+  background-color: #0074d9;
 }
 
 .feedback_block h3 {
@@ -799,6 +809,10 @@ textarea:focus {
 .footer .logo {
   text-align: center;
 }
+.footer .logo img {
+  width: 250px;
+  height: 40px;
+}
 
 .footer .contacts {
   padding: 0;
@@ -822,7 +836,7 @@ textarea:focus {
 
 .footer .contacts .email {
   font-size: 1.4rem;
-  color: #0089cd;
+  color: #0074d9;
   text-decoration: underline;
 }
 
@@ -1460,7 +1474,7 @@ textarea:focus {
 
   .footer .contacts .email {
     font-size: 1.4rem;
-    color: #0089cd;
+    color: #0074d9;
     text-decoration: underline;
   }
 }
@@ -1817,6 +1831,7 @@ textarea:focus {
     -webkit-animation: none !important;
     animation: none !important;
   }
+
   .map {
     width: 250px;
     height: 400px;
