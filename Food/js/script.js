@@ -223,9 +223,9 @@ __webpack_require__.r(__webpack_exports__);
 function forms(formsSelector, modalTimerId) {
     const forms = document.querySelectorAll(formsSelector);
     const message = {
-        loading: 'img/form/spinner.svg',
-        success: 'Thank you for your interest! We'll contact you soon',
-        failure: 'Sorry,something went wrong...'
+        loading: "img/form/spinner.svg",
+        success: "Thank you for your interest! We'll contact you soon",
+        failure: "Sorry,something went wrong..."
     };
 
     forms.forEach(item => {
