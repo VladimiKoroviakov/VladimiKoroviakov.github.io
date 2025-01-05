@@ -19,6 +19,7 @@ $(document).ready(function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Tabs 
     function activateTab(tabSelector, dotSelector) {
         const tabs = document.querySelector(tabSelector);
         const dots = document.querySelector(dotSelector);
@@ -78,4 +79,48 @@ document.addEventListener("DOMContentLoaded", function () {
     activateTab(".catalog__tabs", ".catalog__dots");
     activateTab(".catalog__tabs-4", ".catalog__dots");
     activateDots(".catalog__dots", ".catalog__tabs");
+
+    // Hero section slider 
+    const cardItems = document.querySelectorAll(".promo__cards-item");
+    const images = document.querySelectorAll(".promo__img img");
+    const dots = document.querySelectorAll(".promo__main_dots .dot");
+
+    let currentIndex = 0;
+    let autoSwitch;
+
+    const switchTab = (index) => {
+        cardItems.forEach(item => item.classList.remove("item-active"));
+        images.forEach(img => img.classList.remove("active"));
+        dots.forEach(dot => dot.classList.remove("dot-active"));
+        cardItems[index].classList.add("item-active");
+        images[index].classList.add("active");
+        dots[index].classList.add("dot-active");
+    };
+
+    const startAutoSwitch = () => {
+        autoSwitch = setInterval(() => {
+            currentIndex = (currentIndex + 1) % cardItems.length;
+            switchTab(currentIndex);
+        }, 7000);
+    };
+
+    const stopAutoSwitch = () => {
+        clearInterval(autoSwitch);
+    };
+
+    const addClickEvents = (elements) => {
+        elements.forEach((element, index) => {
+            element.addEventListener("click", () => {
+                stopAutoSwitch();
+                currentIndex = index;
+                switchTab(currentIndex);
+                startAutoSwitch();
+            });
+        });
+    };
+
+    addClickEvents(cardItems);
+    addClickEvents(dots);
+    startAutoSwitch();
+
 });
