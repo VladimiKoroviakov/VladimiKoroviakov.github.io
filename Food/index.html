@@ -28,7 +28,7 @@
             <img src="icons/instagram.svg" alt="instagram">
         </a>
         <a href="#" class="sidepanel__icon">
-            <img src="icons/facebook.svg" alt="facebook">
+            <img src="icons/facebook.png" alt="facebook">
         </a>
     </div>
 
@@ -302,5 +302,21 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("scroll", function () {
+            const sidepanel = document.querySelector(".sidepanel");
+            const sidepanelIcons = document.querySelectorAll(".sidepanel__icon");
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            const fullHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
+
+            if (scrollPosition >= fullHeight) { // User has scrolled 100% down
+                sidepanelIcons.forEach(icon => icon.classList.add("scrolled"));
+                sidepanel.classList.add("scrolled");
+            } else {
+                sidepanelIcons.forEach(icon => icon.classList.remove("scrolled"));
+                sidepanel.classList.remove("scrolled");
+            }
+        });
+    </script>
 </body>
 </html>
