@@ -31,6 +31,11 @@
     fill: $primary-color !important;
 }
 
+.dark-theme .about__skills-circle svg path,
+.dark-theme .background__item-icon svg path {
+    fill: $primary-color !important;
+}
+
 /* Target input fields and textareas in dark mode */
 .dark-theme input, .dark-theme textarea {
     color: $primary-color;     /* Text color for input fields */
