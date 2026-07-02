@@ -163,7 +163,7 @@
                     <div class="title title_fsz36 about__subtitle" data-key="myName">My name is Vladimir</div>
                     <div class="divider"></div>
                     <p class="about__text title title_fsz14" data-key="myStory">
-                        As a proficient web developer, I help companies and individuals make a bold statement in the digital world. Using the most advanced technologies such as HTML5, CSS, JavaScript, jQuery, Gulp, and WordPress, I develop websites that are not only visually striking, but also extremely functional, intuitive, and user-friendly. Whether you're an entrepreneur looking to promote your brand or an individual dreaming of a personalised online space, I create customised solutions that meet your goals. Let's join forces to bring your wildest ideas to life and create an online presence that captivates and inspires!   
+                        As a proficient web developer, I help companies and individuals make a bold statement in the digital world. Using the most advanced technologies such as HTML5, CSS, JavaScript, React, Tailwind CSS, Gulp, and WordPress, plus an AI stack (Claude, GPT, Gemini, DeepSeek), I develop websites that are not only visually striking, but also extremely functional, intuitive, and user-friendly. Whether you're an entrepreneur looking to promote your brand or an individual dreaming of a personalised online space, I create customised solutions that meet your goals. Let's join forces to bring your wildest ideas to life and create an online presence that captivates and inspires!
                     </p>            
                 </div>
                 <div class="about__skills">
@@ -377,30 +377,33 @@
                     </div>
                 </div>
                 <div class="grid-elem hidden-element right">
-                    <div class="skills__logo">
-                        <img src="icons/skills/chatgpt.svg" alt="Chat GPT" class="skills__img">
+                    <div class="skills__logo skills__logo_group">
+                        <img src="icons/skills/claude.svg" alt="Claude" class="skills__img skills__img_small">
+                        <img src="icons/skills/openai.svg" alt="GPT" class="skills__img skills__img_small skills__img_invertable">
+                        <img src="icons/skills/gemini.svg" alt="Gemini" class="skills__img skills__img_small">
+                        <img src="icons/skills/deepseek.svg" alt="DeepSeek" class="skills__img skills__img_small">
                     </div>
-                    <div class="skills__header title title_fsz14">Chat GPT</div>
-                    <div class="title title_fsz12 skills_descr" data-key="chatGPT">
-                        Is a powerfull tool that helps developers write the code faster, make it more reliable and learn interesting features along the way.
-                    </div>
-                </div>
-                <div class="grid-elem hidden-element right">
-                    <div class="skills__logo">
-                        <img src="icons/skills/Jquery.svg" alt="JQuery" class="skills__img">
-                    </div>
-                    <div class="skills__header title title_fsz14">JQuery</div>
-                    <div class="title title_fsz12 skills_descr" data-key="jquery">
-                        This library will speed up the development process. Although it's not a compulsary technology, sometimes it really helps a lot. 
+                    <div class="skills__header title title_fsz14">AI Stack</div>
+                    <div class="title title_fsz12 skills_descr" data-key="aiStack">
+                        Leverages Claude, GPT, Gemini, and DeepSeek together to write code faster, catch issues early, and explore new ideas along the way.
                     </div>
                 </div>
                 <div class="grid-elem hidden-element right">
                     <div class="skills__logo">
-                        <img src="icons/skills/bootstrap.png" alt="Bootstrap" class="skills__img">
+                        <img src="icons/skills/react.svg" alt="React" class="skills__img">
                     </div>
-                    <div class="skills__header title title_fsz14">Bootstrap</div>
-                    <div class="title title_fsz12 skills_descr" data-key="bootstrap">
-                        Is a feature-packed frontend toolkit, that helps to build anything from prototype to production in minutes.
+                    <div class="skills__header title title_fsz14">React</div>
+                    <div class="title title_fsz12 skills_descr" data-key="react">
+                        A component-based JavaScript library for building fast, interactive user interfaces with reusable, maintainable code.
+                    </div>
+                </div>
+                <div class="grid-elem hidden-element right">
+                    <div class="skills__logo">
+                        <img src="icons/skills/tailwind.svg" alt="Tailwind CSS" class="skills__img">
+                    </div>
+                    <div class="skills__header title title_fsz14">Tailwind CSS</div>
+                    <div class="title title_fsz12 skills_descr" data-key="tailwind">
+                        A utility-first CSS framework that makes it possible to build fully custom designs quickly, without leaving the HTML.
                     </div>
                 </div>
                 <div class="grid-elem hidden-element right">
@@ -410,6 +413,42 @@
                     <div class="skills__header title title_fsz14">Gulp</div>
                     <div class="title title_fsz12 skills_descr" data-key="gulp">
                         Is a task execution program. It helps to run external tasks and large scale web applications.
+                    </div>
+                </div>
+                <div class="grid-elem hidden-element bottom">
+                    <div class="skills__logo">
+                        <img src="icons/skills/postgresql.svg" alt="PostgreSQL" class="skills__img">
+                    </div>
+                    <div class="skills__header title title_fsz14">PostgreSQL</div>
+                    <div class="title title_fsz12 skills_descr" data-key="postgresql">
+                        A powerful open-source relational database known for reliability, extensibility, and strong support for complex queries.
+                    </div>
+                </div>
+                <div class="grid-elem hidden-element bottom">
+                    <div class="skills__logo">
+                        <img src="icons/skills/nextjs.svg" alt="Next.js" class="skills__img skills__img_invertable">
+                    </div>
+                    <div class="skills__header title title_fsz14">Next.js</div>
+                    <div class="title title_fsz12 skills_descr" data-key="nextjs">
+                        A React framework for building fast, SEO-friendly websites and apps with server-side rendering and routing built in.
+                    </div>
+                </div>
+                <div class="grid-elem hidden-element bottom">
+                    <div class="skills__logo">
+                        <img src="icons/skills/nodejs.svg" alt="Node.js" class="skills__img">
+                    </div>
+                    <div class="skills__header title title_fsz14">Node.js</div>
+                    <div class="title title_fsz12 skills_descr" data-key="nodejs">
+                        A JavaScript runtime that lets me build fast, scalable backends and APIs using the same language as the frontend.
+                    </div>
+                </div>
+                <div class="grid-elem hidden-element bottom">
+                    <div class="skills__logo">
+                        <img src="icons/skills/framer.svg" alt="Framer" class="skills__img">
+                    </div>
+                    <div class="skills__header title title_fsz14">Framer</div>
+                    <div class="title title_fsz12 skills_descr" data-key="framer">
+                        A design and prototyping tool that lets me build and publish polished, interactive websites without heavy custom code.
                     </div>
                 </div>
             </div>

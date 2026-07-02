@@ -17,10 +17,21 @@
     &__logo {
         height: 65px;
         display: flex;
-        align-items: center;     
+        align-items: center;
+    }
+    &__logo_group {
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 63px;
     }
     &__img{
         height: 63px;
+    }
+    &__img_small {
+        height: 26px;
+    }
+    .dark-theme &__img_invertable {
+        filter: invert(1);
     }
     .grid-elem {
         padding: 30px 30px 25px 30px;
