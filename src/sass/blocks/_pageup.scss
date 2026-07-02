@@ -1,0 +1,13 @@
+.pageup {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 36px;
+    height: 36px;
+    background-color: $primary-color;
+    border-radius: 100%;
+    .dark-theme svg path, svg path {
+        fill:#FFA501 !important;
+    }
+}

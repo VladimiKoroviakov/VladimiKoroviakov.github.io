@@ -1,0 +1,84 @@
+.hidden-element {
+    opacity: 0;
+    filter: blur (5px);
+    transition: all 1s;
+}
+
+.left {
+    transform: translateX(-100%);
+}
+.right {
+    transform: translateX(100%) ;
+}
+.bottom {
+    transform: translateY(100%);
+    transition-delay: 100ms;
+}
+.show {
+    opacity: 1;
+    filter: blur (0);
+    transform: translateX(0);
+}
+
+.left:nth-child(1) { 
+    transition-delay: 200ms;
+}
+.left:nth-child(2) { 
+    transition-delay:400ms;
+}
+.left:nth-child(3) {
+    transition-delay: 600ms;
+}
+.left:nth-child(4) {
+    transition-delay: 800ms;
+}
+.left:nth-child(5) { 
+    transition-delay: 1000ms;
+}
+.left:nth-child(6) { 
+    transition-delay:500ms;
+}
+.left:nth-child(7) {
+    transition-delay: 700ms;
+}
+.left:nth-child(8) {
+    transition-delay: 900ms;
+}
+
+.right:nth-child(1) { 
+    transition-delay: 400ms;
+}
+.right:nth-child(2) { 
+    transition-delay: 600ms;
+}
+.right:nth-child(3) {
+    transition-delay: 800ms;
+}
+.right:nth-child(4) {
+    transition-delay: 1000ms;
+}
+.right:nth-child(5) {
+    transition-delay: 600ms;
+}
+.right:nth-child(6) {
+    transition-delay: 800ms;
+}
+
+.bottom:nth-child(1) { 
+    transition-delay: 300ms;
+}
+.bottom:nth-child(2) { 
+    transition-delay: 300ms;
+}
+.bottom:nth-child(3) {
+    transition-delay: 500ms;
+}
+.bottom:nth-child(4) {
+    transition-delay: 500ms;
+}
+.bottom:nth-child(5) {
+    transition-delay: 700ms;
+}
+.bottom:nth-child(6) {
+    transition-delay: 700ms;
+}

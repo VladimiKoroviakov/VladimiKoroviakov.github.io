@@ -1,0 +1,38 @@
+.policy {
+    padding-top: 15px;
+    h1 {
+        margin-bottom: 10px;
+    }
+    .title {
+        &__section-title {
+            &:before {
+                top: -7px;
+            }
+        }
+    }
+    &__block {
+        padding: 5px 10px;
+        &-title {
+            position: relative;
+            padding-left: 35px;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: $main-color;
+                border-radius: 100%;
+                left: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        &_descr {
+            font-weight: 500;
+        }
+    }
+    &__list {
+        list-style-type: none;
+        font-weight: 500;
+    }
+}

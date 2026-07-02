@@ -1,0 +1,37 @@
+.dark_mode{
+   background: $main-color;
+   width: 36px;
+   height: 36px;
+   border-radius: 100%;
+   cursor: pointer;
+    position: fixed;
+    top: 60px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8s;
+    z-index: 50;
+    // display: none;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+:root {
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+.dark-theme {
+    color: $primary-color;
+    background-color: #1e1e1e;
+}
+.dark-theme svg.social-media path, .dark-theme svg circle  {
+    fill: $primary-color !important;
+}
+
+/* Target input fields and textareas in dark mode */
+.dark-theme input, .dark-theme textarea {
+    color: $primary-color;     /* Text color for input fields */
+}

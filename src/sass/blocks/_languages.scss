@@ -1,0 +1,50 @@
+.language_switcher {
+    background: $main-color;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    cursor: pointer;
+    position: fixed;
+    top: 110px; // Position below the dark mode icon
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 50;
+
+    .language_main {
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    .language_dropdown {
+        position: absolute;
+        top: 46px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+
+        .language_option {
+            background: $main-color;
+            width: 36px;
+            height: 36px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s;
+            }
+        }
+    }
+}
